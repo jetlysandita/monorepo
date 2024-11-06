@@ -1,6 +1,7 @@
 import React from 'react';
 import './button.css';
 import Text from '../Text/Text';
+import IconSpiner from '../Icon/IconSpinner';
 
 const VARIANTS = [
   'primary',
@@ -23,6 +24,7 @@ interface ButtonProps {
   variant?: Variant;
   size?: Size;
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -32,14 +34,18 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   disabled = false,
+  isLoading = false,
 }) => {
   return (
     <button
       className={`button btn-${variant} btn-${size} ${className}`}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || isLoading}
     >
-      {children}
+      {isLoading && <IconSpiner className="spinner" />}
+      <span style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+        {children}
+      </span>
     </button>
   );
 };
@@ -64,6 +70,10 @@ export const ButtonExample = () => {
               </Button>
 
               <Button variant={variant} size="sm">
+                Small Button
+              </Button>
+
+              <Button variant={variant} size="sm" isLoading>
                 Small Button
               </Button>
             </div>

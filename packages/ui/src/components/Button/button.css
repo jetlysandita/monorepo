@@ -8,10 +8,11 @@
   color: #ffffff;
   transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 /* Button Size Variants */
@@ -69,11 +70,8 @@
 /* Disabled Button Styles */
 .button:disabled,
 .button[disabled] {
-  background-color: var(--color-text-muted); /* Lighter color to indicate disabled */
-  border-color: var(--color-text-muted); /* Same muted color for the border */
   cursor: not-allowed; /* Show the 'not-allowed' cursor to indicate it's disabled */
-  opacity: 0.5; /* Make the button appear faded */
-  pointer-events: none; /* Prevent any click events */
+  opacity: 0.6; /* Make the button appear faded */
 }
 
 .button:hover{
@@ -109,4 +107,21 @@
 .btn-info:hover {
   background-color: var(--color-info-hover);
   border-color: var(--color-info-hover);
+}
+
+.spinner {
+  animation: rotateCircle 0.7s linear infinite;
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform:  translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform:  translate(-50%, -50%) rotate(360deg);
+  }
 }
