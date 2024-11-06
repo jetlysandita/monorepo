@@ -1,0 +1,35 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #007BFF;
+  --color-secondary: #0056B3;
+
+  /* Background Colors */
+  --color-background-light: #F8F9FA;
+  --color-background-dark: #343A40;
+  --color-surface: #FFFFFF;
+
+  /* Text Colors */
+  --color-text-main: #212529;
+  --color-text-secondary: #6C757D;
+  --color-text-muted: #ADB5BD;
+  --color-text-inverse: #F8F9FA;
+
+  /* Accent Colors */
+  --color-accent-primary: #6F42C1;
+  --color-accent-highlight: #FFD700;
+
+  /* Hover Colors */
+  --color-hover-primary: #0056B3;
+  --color-hover-accent: #5A4ECF;
+  --color-hover-secondary: #004085;
+
+  /* State Colors */
+  --color-info: #17A2B8;
+  --color-info-hover: #138496; /* Info hover color */
+  --color-warning: #FFC107;
+  --color-warning-hover: #E0A800; /* Warning hover color */
+  --color-success: #28A745;
+  --color-success-hover: #218838; /* Success hover color */
+  --color-error: #DC3545;
+  --color-error-hover: #C82333; /* Error hover color */
+}

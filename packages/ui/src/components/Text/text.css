@@ -1,0 +1,48 @@
+@import '../../styles/colors.css';
+
+/* Base text style */
+.text {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Variant Styles */
+.txt-primary {
+  color: var(--color-text-main);
+}
+
+.txt-secondary {
+  color: var(--color-text-secondary);
+}
+
+.txt-success {
+  color: var(--color-success);
+}
+
+.txt-error {
+  color: var(--color-error);
+}
+
+.txt-warning {
+  color: var(--color-warning);
+}
+
+.txt-info {
+  color: var(--color-info);
+}
+
+
+
+/* Size Styles */
+.txt-sm {
+  font-size: 12px;
+}
+
+.txt-md {
+  font-size: 16px;
+}
+
+.txt-lg {
+  font-size: 24px;
+}

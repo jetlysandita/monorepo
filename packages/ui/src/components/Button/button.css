@@ -1,0 +1,112 @@
+@import '../../styles/colors.css';
+
+/* Button Base Styles */
+.button {
+  font-size: 16px; /* Default font size */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  color: #ffffff;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Size Variants */
+
+/* Desktop Sizes */
+.btn-lg {
+  font-size: 20px; /* Larger font for the large button */
+  padding: 10px 20px; /* Slightly larger padding for large button */
+  height: 48px;
+}
+
+.btn-md {
+  font-size: 16px;
+  padding: 8px 16px; /* Default padding for medium button */
+  height: 40px;
+}
+
+.btn-sm {
+  font-size: 14px;
+  padding: 6px 12px; /* Smaller padding for small button */
+  height: 32px;
+}
+
+/* Button Variants */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-success {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.btn-warning {
+  background-color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.btn-error {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.btn-info {
+  background-color: var(--color-info);
+  border-color: var(--color-info);
+}
+
+/* Disabled Button Styles */
+.button:disabled,
+.button[disabled] {
+  background-color: var(--color-text-muted); /* Lighter color to indicate disabled */
+  border-color: var(--color-text-muted); /* Same muted color for the border */
+  cursor: not-allowed; /* Show the 'not-allowed' cursor to indicate it's disabled */
+  opacity: 0.5; /* Make the button appear faded */
+  pointer-events: none; /* Prevent any click events */
+}
+
+.button:hover{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+/* Hover Effects */
+.btn-primary:hover {
+  background-color: var(--color-hover-primary);
+  border-color: var(--color-hover-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-hover-secondary);
+  border-color: var(--color-hover-secondary);
+}
+
+.btn-success:hover {
+  background-color: var(--color-success-hover);
+  border-color: var(--color-success-hover);
+}
+
+.btn-warning:hover {
+  background-color: var(--color-warning-hover);
+  border-color: var(--color-warning-hover);
+}
+
+.btn-error:hover {
+  background-color: var(--color-error-hover);
+  border-color: var(--color-error-hover);
+}
+
+.btn-info:hover {
+  background-color: var(--color-info-hover);
+  border-color: var(--color-info-hover);
+}
