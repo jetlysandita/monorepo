@@ -8,6 +8,7 @@
     "./code": "./src/code.tsx"
   },
   "scripts": {
+    "styleguide:start": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component"

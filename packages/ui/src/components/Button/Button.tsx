@@ -18,16 +18,17 @@ type Variant = (typeof VARIANTS)[number];
 type Size = (typeof SIZES)[number];
 
 interface ButtonProps {
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
-  className?: string; // Optional additional class
+  className?: string;
   variant?: Variant;
   size?: Size;
   disabled?: boolean;
   isLoading?: boolean;
+  style?: React.CSSProperties;
 }
 
-const Button: React.FC<ButtonProps> = ({
+function Button({
   onClick,
   children,
   className,
@@ -35,12 +36,14 @@ const Button: React.FC<ButtonProps> = ({
   size = 'md',
   disabled = false,
   isLoading = false,
-}) => {
+  style,
+}: ButtonProps) {
   return (
     <button
       className={`button btn-${variant} btn-${size} ${className}`}
       onClick={onClick}
       disabled={disabled || isLoading}
+      style={style}
     >
       {isLoading && <IconSpiner className="spinner" />}
       <span style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
@@ -48,9 +51,9 @@ const Button: React.FC<ButtonProps> = ({
       </span>
     </button>
   );
-};
+}
 
-export const ButtonExample = () => {
+export function ExampleButton() {
   return (
     <div style={{ display: 'flex', gap: 10, flexDirection: 'column' }}>
       {VARIANTS.map((variant) => {
@@ -82,6 +85,6 @@ export const ButtonExample = () => {
       })}
     </div>
   );
-};
+}
 
 export default Button;

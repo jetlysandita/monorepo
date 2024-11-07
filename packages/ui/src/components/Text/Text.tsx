@@ -20,19 +20,30 @@ type TextSize = (typeof SIZES)[number];
 type TextTag = (typeof TEXT_TAGS)[number];
 
 interface TextProps {
+  children: React.ReactNode;
   variant?: TextVariant;
   size?: TextSize;
   tag?: TextTag; // Default to span if no tag is provided
-  children: React.ReactNode;
+  numberOfLines?: number;
+  style?: React.CSSProperties;
 }
 
 // The Text Component
-const Text: React.FC<TextProps> = ({
+function Text({
   variant = 'primary',
   size = 'md',
   tag = 'span',
   children,
-}) => {
+  style,
+  numberOfLines = 0,
+}: TextProps) {
+  const truncateStyle = {
+    display: '-webkit-box',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    WebkitLineClamp: numberOfLines,
+    WebkitBoxOrient: 'vertical' as const,
+  };
   // Combine the variant and size styles into one className dynamically
   const classNames = [
     'text', // Base class
@@ -42,10 +53,14 @@ const Text: React.FC<TextProps> = ({
 
   const Tag = tag; // Dynamic tag selection
 
-  return <Tag className={classNames}>{children}</Tag>;
-};
+  return (
+    <Tag className={classNames} style={{ ...truncateStyle, ...style }}>
+      {children}
+    </Tag>
+  );
+}
 
-export const TextExample = () => {
+export const ExampleText = () => {
   return (
     <div style={{ display: 'flex', gap: 10, flexDirection: 'column' }}>
       {VARIANTS.map((variant) => {
@@ -64,6 +79,7 @@ export const TextExample = () => {
               <Text variant={variant} size="lg">
                 Large Text
               </Text>
+
               <Text variant={variant} size="md">
                 Medium Text
               </Text>

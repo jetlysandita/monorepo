@@ -6,7 +6,7 @@ A customizable text component with a modern design.
 
 ```tsx
 import React from 'react';
-import { TextExample } from './Text';
+import { ExampleText } from './Text';
 
-<TextExample />;
+<ExampleText />;
 ```

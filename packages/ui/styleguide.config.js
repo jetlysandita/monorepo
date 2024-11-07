@@ -1,6 +1,6 @@
 // packages/ui/styleguide.config.js
 const path = require('path');
-
+const { withDefaultConfig } = require('react-docgen-typescript');
 module.exports = {
   components: 'src/components/**/[A-Z]*.{ts,tsx}', // Path to your components
   webpackConfig: {
@@ -30,6 +30,6 @@ module.exports = {
       extensions: ['.ts', '.tsx', '.js', '.jsx'], // Resolve these file types
     },
   },
-  propsParser: require('react-docgen-typescript').withDefaultConfig().parse,
+  propsParser: withDefaultConfig().parse,
   styleguideDir: 'styleguide',
 };
